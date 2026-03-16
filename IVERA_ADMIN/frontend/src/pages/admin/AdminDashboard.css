@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=DM+Mono:wght@300;400&display=swap');
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ── Layout ── */
+.dash-page {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f5f4;
+  font-family: 'DM Mono', monospace;
+}
+
+/* ── Sidebar ── */
+.dash-sidebar {
+  width: 200px;
+  background: #0e0e0e;
+  display: flex;
+  flex-direction: column;
+  padding: 36px 24px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.sidebar-brand {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px;
+  font-weight: 300;
+  color: #fff;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.sidebar-brand span { color: #c9a96e; }
+
+.sidebar-nav { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+
+.nav-item {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.35);
+  padding: 10px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.nav-item:hover  { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.7); }
+.nav-item.active { background: rgba(201,169,110,0.15); color: #c9a96e; }
+
+.sidebar-footer {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.15);
+}
+
+/* ── Main ── */
+.dash-main {
+  flex: 1;
+  padding: 40px 48px;
+  overflow-y: auto;
+}
+
+/* ── Header ── */
+.dash-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 36px;
+  padding-bottom: 24px;
+  border-bottom: 0.5px solid #e5e5e5;
+}
+
+.dash-eyebrow {
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #c9a96e;
+  margin-bottom: 4px;
+}
+
+.dash-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  color: #171717;
+}
+
+.header-meta {
+  font-size: 28px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #171717;
+  font-weight: 300;
+}
+.header-meta span {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: #a3a3a3;
+  letter-spacing: 0.1em;
+  margin-left: 6px;
+}
+
+/* ── Table ── */
+.table-head {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 16px 10px;
+  font-size: 9px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #a3a3a3;
+  border-bottom: 0.5px solid #e5e5e5;
+  margin-bottom: 8px;
+}
+
+.col-img     { width: 60px; flex-shrink: 0; }
+.col-name    { flex: 1; }
+.col-cat     { width: 120px; flex-shrink: 0; }
+.col-price   { width: 80px; flex-shrink: 0; text-align: right; }
+.col-actions { width: 140px; flex-shrink: 0; text-align: right; }
+
+/* ── Product Row ── */
+.product-list { display: flex; flex-direction: column; gap: 6px; }
+
+.product-row {
+  background: #fff;
+  border: 0.5px solid #e5e5e5;
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: border-color 0.2s;
+}
+.product-row:hover   { border-color: #d4d4d4; }
+.product-row.is-editing {
+  border-color: #c9a96e;
+  background: #fffdf9;
+}
+
+.product-thumb {
+  width: 52px;
+  height: 52px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 0.5px solid #e5e5e5;
+}
+
+.product-name {
+  font-size: 13px;
+  color: #171717;
+  font-weight: 400;
+  margin-bottom: 3px;
+}
+.product-desc {
+  font-size: 10px;
+  color: #a3a3a3;
+  letter-spacing: 0.03em;
+  line-height: 1.5;
+}
+
+.badge {
+  display: inline-block;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: #f5f5f4;
+  color: #737373;
+  border: 0.5px solid #e5e5e5;
+}
+
+.col-price { font-size: 13px; color: #171717; }
+
+/* ── Action Buttons ── */
+.btn-edit, .btn-delete {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 0.5px solid;
+  transition: all 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 58px;
+}
+
+.btn-edit {
+  background: #0e0e0e;
+  color: #fff;
+  border-color: #0e0e0e;
+}
+.btn-edit:hover { background: #2a2a2a; border-color: #2a2a2a; }
+
+.btn-delete {
+  background: transparent;
+  color: #ef4444;
+  border-color: #fecaca;
+  margin-left: 6px;
+}
+.btn-delete:hover { background: #fef2f2; }
+.btn-delete:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Edit Form ── */
+.edit-form {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.edit-thumb {
+  width: 72px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 0.5px solid #e5e5e5;
+  flex-shrink: 0;
+}
+
+.edit-fields { flex: 1; display: flex; flex-direction: column; gap: 12px; }
+
+.edit-row {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.edit-field {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 5px;
+}
+.edit-field--sm  { max-width: 100px; }
+.edit-field--full { flex: 1; }
+
+.edit-field label {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a3a3a3;
+}
+
+.edit-field input,
+.edit-field textarea {
+  border: 0.5px solid #d4d4d4;
+  border-radius: 0;
+  background: #fff;
+  padding: 8px 10px;
+  font-family: 'DM Mono', monospace;
+  font-size: 12px;
+  color: #171717;
+  outline: none;
+  transition: border-color 0.2s;
+  resize: none;
+  width: 100%;
+}
+.edit-field input:focus,
+.edit-field textarea:focus { border-color: #c9a96e; }
+
+.edit-field input[type="file"] {
+  font-size: 11px;
+  padding: 6px 10px;
+  color: #737373;
+  cursor: pointer;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.btn-save {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  padding: 9px 24px;
+  background: #0e0e0e;
+  color: #fff;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 120px;
+  height: 38px;
+}
+.btn-save:hover    { background: #2a2a2a; }
+.btn-save:disabled { opacity: 0.6; cursor: not-allowed; }
+
+.btn-cancel {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 9px 18px;
+  background: transparent;
+  color: #a3a3a3;
+  border: 0.5px solid #e5e5e5;
+  border-radius: 0;
+  cursor: pointer;
+  transition: all 0.15s;
+  height: 38px;
+}
+.btn-cancel:hover { border-color: #d4d4d4; color: #737373; }
+
+/* ── Spinner ── */
+.spinner {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid rgba(255,255,255,0.25);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+.spinner--dark {
+  border-color: rgba(239,68,68,0.2);
+  border-top-color: #ef4444;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Empty ── */
+.empty-state {
+  text-align: center;
+  padding: 60px;
+  font-size: 11px;
+  color: #a3a3a3;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
