@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, CreditCard, Music, Bus } from 'lucide-react';
+import { ExternalLink, CreditCard, Music, Bus, Diamond, MessageCircle } from 'lucide-react';
 import { Section } from './Section';
 
 const projects = [
@@ -10,6 +10,20 @@ const projects = [
     icon: <Music className="text-[#ededed]" size={40} />,
     color: 'bg-indigo-900/20',
   },
+  {
+  title: 'IVERA',
+  tech: 'Custom Web Solution',
+  desc: 'A digital platform for a jewelry designer client to showcase collections and manage orders efficiently.',
+  icon: <Diamond className="text-[#ededed]" size={40} />,
+  color: 'bg-pink-900/20',
+},
+{
+  title: 'NexusChat',
+  tech: 'React & Node.js',
+  desc: 'An office communication app designed to encourage creative conversations and team collaboration.',
+  icon: <MessageCircle  className="text-[#ededed]" size={40} />,
+  color: 'bg-blue-900/20',
+},
   {
     title: 'TransTrack',
     tech: 'Python-Flask',
