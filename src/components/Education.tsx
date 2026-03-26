@@ -10,7 +10,7 @@ const education = [
     grade: 'CGPA: 8.4',
   },
   {
-    degree: 'HSC (Science)',
+    degree: 'HSC (Commerce)',
     school: 'Unique School of Science',
     year: '2021 – 2022',
     grade: 'Percentage: 8.7',
